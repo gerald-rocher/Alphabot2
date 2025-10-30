@@ -1,0 +1,179 @@
+<sdf version='1.7'>
+  <model name='alphabot2'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>0 0 0.013 0 -0 -1.5708</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00058889</ixx>
+          <ixy>0</ixy>
+          <ixz>-1.2e-07</ixz>
+          <iyy>0.00054762</iyy>
+          <iyz>2.7e-07</iyz>
+          <izz>0.00089218</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+        <pose>0.001 0 0.014 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.14 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_back_link_collision_1'>
+        <pose>0 -0.05 -0.016 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_front_link_collision_2'>
+        <pose>0 0.05 -0.016 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ab2_description/meshes/dae/body.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wheel_left_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.0425 0 0 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_left_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_left_link'>
+      <pose relative_to='wheel_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000196 -0.000181 -7.5e-05 0 -0 0</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>6.44e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.07e-06</iyy>
+          <iyz>0</iyz>
+          <izz>4.07e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_left_link_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.019</length>
+            <radius>0.021</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='wheel_left_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ab2_description/meshes/dae/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wheel_right_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.0425 0 0 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>wheel_right_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel_right_link'>
+      <pose relative_to='wheel_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000196 -0.000181 -7.5e-05 0 -0 0</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>6.44e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.07e-06</iyy>
+          <iyz>0</iyz>
+          <izz>4.07e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_right_link_collision'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.019</length>
+            <radius>0.021</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='wheel_right_link_visual'>
+        <pose>0 0 0 3.14159 0.001593 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ab2_description/meshes/dae/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    
+    
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <!-- wheels -->
+      <left_joint>wheel_left_joint</left_joint>
+      <right_joint>wheel_right_joint</right_joint>
+
+      <!-- kinematics -->
+      <wheel_separation>0.110</wheel_separation>
+      <wheel_radius>0.021</wheel_radius>
+
+      <!-- limits -->
+      <max_linear_acceleration>1.0</max_linear_acceleration>
+
+      <topic>cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <tf_topic>/tf</tf_topic>
+      <odom_publisher_frequency>30</odom_publisher_frequency>
+      <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system"
+      name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+      <!-- <update_rate>30</update_rate> -->
+      <joint_name>wheel_left_joint</joint_name>
+      <joint_name>wheel_right_joint</joint_name>
+    </plugin>    
+   
+  </model>
+</sdf>

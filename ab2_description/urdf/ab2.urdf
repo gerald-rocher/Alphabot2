@@ -4,13 +4,13 @@
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
   </joint>
   <link name="base_link">
     <visual>
-      <origin xyz="0 0 0.0" rpy="1.57 0 0"/>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ab2_description/meshes/glb/body.glb" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ab2_description/meshes/dae/body.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
@@ -35,11 +35,11 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ab2_description/meshes/glb/wheel.glb" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ab2_description/meshes/dae/wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
       <geometry>
         <cylinder length="0.019" radius="0.021"/>
       </geometry>
@@ -60,11 +60,11 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 3.14 0"/>
       <geometry>
-        <mesh filename="package://ab2_description/meshes/glb/wheel.glb" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ab2_description/meshes/dae/wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.57 0"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
       <geometry>
         <cylinder length="0.019" radius="0.021"/>
       </geometry>
