@@ -1,4 +1,4 @@
-# AlphaBot2 Description
+# AlphaBot2 Drone Landing Platform Description
 
 [![humble][humble-badge]][humble]
 [![ubuntu22][ubuntu22-badge]][ubuntu22]
