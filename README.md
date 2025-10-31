@@ -22,6 +22,9 @@ $> colcon build --packages-select ab2_gazebo
 ```
 This is a work in progress, more packages to come in the future.
 
+Note: see https://github.com/Mik3Rizzo/alphabot2-ros2/tree/main for deploying Alphabot2 ROS2 control nodes on the real robot.
+
+
 [humble]: https://docs.ros.org/en/humble/index.html
 [humble-badge]: https://img.shields.io/badge/-HUMBLE-orange?style=flat-square&logo=ros
 [ubuntu22-badge]: https://img.shields.io/badge/-UBUNTU%2022%2E04-blue?style=flat-square&logo=ubuntu&logoColor=white
