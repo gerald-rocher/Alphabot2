@@ -6,7 +6,7 @@
 
 
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://www.bitcraze.io/images/documentation/overview/crazyflie.png" alt="ROS2" width="300">
+  <img src="ab2_description/resources/crazyflie.png" alt="ROS2" width="300">
   <span style="font-size: 32px; font-weight: bold;">+</span>
   <img src="ab2_description/resources/ab2-platform.png" alt="Alphabot2 robot" width="300">
 </div>
