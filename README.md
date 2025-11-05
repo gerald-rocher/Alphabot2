@@ -5,11 +5,10 @@
 ![ignition-gazebo][ignition-gazebo-badge]
 
 
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="ab2_description/resources/Crazyflie.png" alt="ROS2" width="300">
-  <span style="font-size: 32px; font-weight: bold;">+</span>
+<p align="center">
+  <img src="ab2_description/resources/Crazyflie.png" alt="Crazyflie" width="300">
   <img src="ab2_description/resources/ab2-platform.png" alt="Alphabot2 robot" width="300">
-</div>
+</p>
 
 A set of ROS2 packages for modeling and simulating the [Waveshare Alphabot2](https://www.waveshare.com/product/robotics/mobile-robots/raspberry-pi-robots/alphabot2-pi3-b-plus.htm) robot, modified to carry a drone landing platform.<br>
 The targeted drone is the [Bitcraze Crazyflie](https://www.bitcraze.io/crazyflie/), a small open-source drone.
