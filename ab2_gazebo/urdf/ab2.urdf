@@ -14,17 +14,23 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.001 0 0.014" rpy="0 0 0"/>
+      <origin xyz="0.001 0 0.02" rpy="0 0 0"/>
       <geometry>
-        <box size="0.14 0.14 0.05"/>
+        <box size="0.14 0.14 0.065"/>
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.0 0.0 0.013"/>
-      <mass value="0.50000000"/>
-      <inertia ixx="0.00058889" ixy="0.00000000" ixz="-0.00000012" iyy="0.00054762" iyz="0.00000027" izz="0.00089218"/>
+      <origin xyz="0.0 0.0 0.02"/>
+      <mass value="0.54000000"/>
+      <inertia ixx="0.00080166" ixy="0.00000000" ixz="-0.00000019" iyy="0.00076796" iyz="0.00000200" izz="0.00117596"/>
     </inertial>
   </link>
+  <joint name="landing_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="landing_link"/>
+    <origin xyz="0 0 0.053" rpy="0 0 0"/>
+  </joint>
+  <link name="landing_link"/>
   <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_left_link"/>

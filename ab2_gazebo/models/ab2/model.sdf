@@ -2,22 +2,22 @@
   <model name='alphabot2'>
     <link name='base_footprint'>
       <inertial>
-        <pose>0 0 0.013 0 -0 -1.5708</pose>
-        <mass>0.5</mass>
-        <inertia>
-          <ixx>0.00058889</ixx>
-          <ixy>0</ixy>
-          <ixz>-1.2e-07</ixz>
-          <iyy>0.00054762</iyy>
-          <iyz>2.7e-07</iyz>
-          <izz>0.00089218</izz>
-        </inertia>
+         <pose>0 0 0.02 0 0 -1.5708</pose>
+         <mass>0.54</mass>
+         <inertia>
+           <ixx>0.00080166</ixx>
+           <ixy>0.00000000</ixy>
+           <ixz>-0.00000019</ixz>
+           <iyy>0.00076796</iyy>
+           <iyz>0.00000200</iyz>
+           <izz>0.00117596</izz>
+         </inertia>
       </inertial>
       <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
-        <pose>0.001 0 0.014 0 -0 0</pose>
+        <pose>0.001 0 0.02 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.14 0.14 0.05</size>
+            <size>0.14 0.14 0.065</size>
           </box>
         </geometry>
       </collision>
@@ -47,6 +47,14 @@
         </geometry>
       </visual>
     </link>
+
+    <joint name='landing_joint' type='fixed'>
+      <pose relative_to='base_footprint'>0 0 0.053 0 0 0</pose>
+      <parent>base_footprint</parent>
+      <child>landing_link</child>
+    </joint>
+    <link name='landing_link'/>
+
     <joint name='wheel_left_joint' type='revolute'>
       <pose relative_to='base_footprint'>-0.044 0 0 0 -0 0</pose>
       <parent>base_footprint</parent>
