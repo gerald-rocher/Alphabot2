@@ -11263,7 +11263,7 @@
       <init_from>FormicaLaminateDark.jpg</init_from>
     </image>
     <image id="Material_png" name="Material_png">
-      <init_from>Material.png</init_from>
+      <init_from>heliport.png</init_from>
     </image>
     <image id="Metal_Silver_jpg" name="Metal_Silver_jpg">
       <init_from>MetalSilver.jpg</init_from>
